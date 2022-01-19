@@ -1,0 +1,27 @@
+#container {
+  /* インライン要素を中央揃えする */
+  text-align: center;
+}
+.btn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 40px;
+  margin: 50px 0;
+  font-weight: 600;
+  /* カーソル上に来た時にpointerになる */
+  cursor: pointer;
+  /* hoverの変更をゆっくりにする */
+  /* transitionとは移り変わりという意味 */
+  /* allをbackground-colorなどにすると、背景色の変化だけ時間差になる */
+  /* 第３引数で移り変わりの緩急を設定できる */
+  /* 第４引数でアニメーションが開始するまでの待機時間を設定する */
+  /* transition: all 0.3s ease 0.3s; */
+
+  /* 下記のような書き方で２種類のアニメーションを分けることもできる */
+  transition: color 0.4s ease 3s, background-color 0.3s ease 5s;
+}
+.btn:hover {
+  background-color: black;
+  color: white;
+}
