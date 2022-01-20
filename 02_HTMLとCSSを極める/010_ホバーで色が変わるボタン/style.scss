@@ -1,0 +1,44 @@
+// scssでの変数宣言
+$cWhite: white;
+$cBlack: black;
+
+#container {
+  /* インライン要素を中央揃えする */
+  text-align: center;
+  // & .btnと記載することができるが、省略してネスト書くことができる
+  .btn {
+  }
+}
+.btn {
+  background-color: $cWhite;
+  color: $cBlack;
+  border: 1px solid $cBlack;
+  padding: 10px 40px;
+  margin: 50px 0;
+  font-weight: 600;
+  /* カーソル上に来た時にpointerになる */
+  cursor: pointer;
+  /* hoverの変更をゆっくりにする */
+  /* transitionとは移り変わりという意味 */
+  /* allをbackground-colorなどにすると、背景色の変化だけ時間差になる */
+  /* 第３引数で移り変わりの緩急を設定できる */
+  /* 第４引数でアニメーションが開始するまでの待機時間を設定する */
+  /* transition: all 0.3s ease 0.3s; */
+
+  transition: all 0.3s;
+  /* 下記のような書き方で２種類のアニメーションを分けることもできる */
+  // transition: color 0.4s ease 3s, background-color 0.3s ease 5s;
+
+  // 半角スペースを開けたくない場合には省略することができない
+  // :hoverはCSS的には.btn:hoverと記述する。半角スペース入れたくないので省略できない。
+  // もし省略してしまうと、コンパイルしたら半角スペースあけて作られるのでCSSがきかない
+  // コンパイルはできるけど動かないってすごく嫌な仕様
+  &:hover {
+    background-color: $cBlack;
+    color: $cWhite;
+  }
+
+  // btn要素の名前がbtn-cubeだった場合、下記のような書き方をするとbtn-cubeに対するCSSがあたるようになる
+  // &-cube {
+  // }
+}
