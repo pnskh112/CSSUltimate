@@ -1,7 +1,9 @@
+@charset "UTF-8";
 #container {
   /* インライン要素を中央揃えする */
   text-align: center;
 }
+
 .btn {
   background-color: white;
   color: black;
@@ -17,11 +19,13 @@
   /* 第３引数で移り変わりの緩急を設定できる */
   /* 第４引数でアニメーションが開始するまでの待機時間を設定する */
   /* transition: all 0.3s ease 0.3s; */
-
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   /* 下記のような書き方で２種類のアニメーションを分けることもできる */
-  transition: color 0.4s ease 3s, background-color 0.3s ease 5s;
 }
+
 .btn:hover {
   background-color: black;
   color: white;
 }
+/*# sourceMappingURL=style.css.map */
