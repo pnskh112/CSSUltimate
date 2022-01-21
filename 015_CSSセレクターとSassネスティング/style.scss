@@ -1,0 +1,23 @@
+.parent {
+  color: blue;
+  // 半角スペースのみにしてしまうと、parentの要素に含まれる全てのelement要素、という意味になってしまう
+  // >をつけることで子要素のみにできるので、１階層下がった要素のみ色を変えることができる
+  // parentの中にある子要素の色を変えている。複数の条件によって色を選択されている。このようなセレクタは詳細度が高いので優先される
+  // & > divと書いてもいける
+  & > .element {
+    color: purple;
+    // ここまで書くと詳細度が高くなるので適用される
+    // ここでもし半角スペース開けてしまうと、.element要素の中のにいる.second-childという子要素　という意味になってしまう
+    // 半角スペースをつけないようにすると.element　と　.second-childの２つのclassを持つ要素という意味にできる
+    &.second-child {
+      color: black;
+    }
+  }
+}
+.element {
+  color: red;
+}
+// $ >  .elementの方が詳細度が高いのでこのcolor: blackは適用されない
+// .second-child {
+//   color: black;
+// }
